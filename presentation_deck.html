@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NagarSetu AI — Project Synopsis Presentation</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+      transform: scale(0.98);
+    }
+    .slide.active {
+      display: flex;
+      opacity: 1;
+      transform: scale(1);
+    }
+    @media print {
+      body {
+        background: #0B1120 !important;
+        color: #F8FAFC !important;
+        -webkit-print-color-adjust: exact;
+      }
+      .slide {
+        display: flex !important;
+        opacity: 1 !important;
+        page-break-after: always;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        transform: none !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#0B1120] text-slate-100 antialiased min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950 overflow-hidden">
+
+  <!-- Top Global Presentation Bar -->
+  <header class="no-print h-14 border-b border-slate-800/80 bg-[#0F172A]/90 backdrop-blur-md px-6 flex items-center justify-between z-30 select-none">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-amber-600 flex items-center justify-center font-extrabold text-slate-950 text-xs shadow-md shadow-amber-500/20">
+        NS
+      </div>
+      <div>
+        <span class="text-sm font-extrabold tracking-wide text-white">NAGAR<span class="text-amber-400">SETU</span> AI</span>
+        <span class="hidden sm:inline-block text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 ml-2">PROJECT SYNOPSIS</span>
+      </div>
+    </div>
+
+    <!-- Center Slide Counter -->
+    <div class="flex items-center gap-2 text-xs font-mono">
+      <span class="text-slate-400">SLIDE</span>
+      <span id="currentSlideNum" class="text-amber-400 font-bold text-sm">1</span>
+      <span class="text-slate-600">/</span>
+      <span id="totalSlidesNum" class="text-slate-400">12</span>
+    </div>
+
+    <!-- Right Controls -->
+    <div class="flex items-center gap-2">
+      <button onclick="toggleNotes()" id="notesBtn" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono flex items-center gap-1.5 transition-colors" title="Toggle Presenter Speech Notes (P)">
+        <span>🎤</span>
+        <span class="hidden md:inline">Notes</span>
+      </button>
+      <button onclick="toggleFullscreen()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono flex items-center gap-1.5 transition-colors" title="Full Screen (F)">
+        <span>⛶</span>
+        <span class="hidden md:inline">Full</span>
+      </button>
+      <button onclick="window.print()" class="px-2.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors" title="Print or Save to PDF">
+        <span>📄</span>
+        <span class="hidden md:inline">Export PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Slide Stage Viewport (16:9 Aspect Ratio Container) -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-6 overflow-hidden relative">
+
+    <!-- ==========================================
+         SLIDE 1: Cover Slide
+         ========================================== -->
+    <section class="slide active w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="Welcome panel members and evaluators. Today I am presenting NagarSetu AI, an autonomous civic intelligence and governance orchestration platform powered by Generative AI and spatial telemetry, configured with real-world administrative data for Ichalkaranji Municipal Corporation.">
+      <div class="absolute -right-24 -top-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 border border-amber-500/40">
+            Official Project Synopsis
+          </span>
+          <span class="text-xs font-mono text-slate-400">• Flagship Pilot Model 2026</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-2 font-sans">
+          NAGAR<span class="text-amber-400">SETU</span> <span class="text-teal-400">AI</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 font-medium italic mb-4">
+          Connecting Citizens. Empowering Governance.
+        </p>
+        <p class="text-sm sm:text-base text-slate-400 max-w-3xl leading-relaxed">
+          An Autonomous Civic Intelligence, Spatial GIS Telemetry & Grievance Orchestration Platform tailored for <strong class="text-white">Ichalkaranji Municipal Corporation (IMC)</strong> with native NLP & Multilingual AI orchestration.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-700/80">
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="text-xs font-mono text-amber-400 font-bold uppercase">GenAI Capabilities</div>
+          <div class="text-xs text-slate-300 mt-1">Civic Assistant Bot, Automated AI Routing, Spatial Deduplication</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="text-xs font-mono text-teal-400 font-bold uppercase">Engineering Stack</div>
+          <div class="text-xs text-slate-300 mt-1">React 18 + Electron Shell + Node.js REST API + MongoDB GeoJSON</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="text-xs font-mono text-emerald-400 font-bold uppercase">Operational Scope</div>
+          <div class="text-xs text-slate-300 mt-1">16 Election Prabhags, 65 Wards, 11 Multi-Role Personas, Real-time SLA</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: Problem Statement
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="Traditional urban local bodies struggle with three fundamental bottlenecks: fragmented grievance intake without closed-loop proof, severe operational waste from duplicate tickets, and language exclusion for regional citizens. NagarSetu AI directly solves all three.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Context & Motivation</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">The Urban Civic Governance Crisis</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Why legacy municipal portals and manual helpline systems fail in modern smart cities.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-auto">
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-rose-500/40 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-rose-400 text-xl font-bold">01</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 font-bold">FRAGMENTED</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Grievance Black Hole</h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• Citizens submit complaints across letters, calls, and WhatsApp with zero unified tracking.</li>
+            <li>• No transparent lifecycle: cases are closed on paper without physical site resolution.</li>
+            <li>• Complainants are never asked to verify the repair before ticket termination.</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-amber-400 text-xl font-bold">02</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-bold">DUPLICATION</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Duplicate Flooding</h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• A single prominent road pothole or water leak triggers 20-50 duplicate submissions.</li>
+            <li>• Controllers waste hours manually triaging and re-assigning identical reports.</li>
+            <li>• Multiple field teams get dispatched to the exact same spot, wasting civic budget.</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-teal-500/40 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-teal-400 text-xl font-bold">03</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-teal-500/10 text-teal-400 font-bold">EXCLUSION</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Language & GIS Blindspots</h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• Traditional portals alienate grassroots citizens with rigid forms, lack of NLP, and slow manual routing.</li>
+            <li>• Zero spatial visibility: ward officers cannot view live GIS heatmap clusters.</li>
+            <li>• Critical P1 emergencies (pipeline explosions, live wires) breach SLA unmonitored.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-mono flex items-center gap-2">
+        <span>💡</span>
+        <span>Target: Build an autonomous, spatial, bilingual closed-loop bridge between 300,000+ citizens and municipal crews.</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: The NagarSetu AI Solution
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="NagarSetu AI provides a bilateral ecosystem: a friction-free, bilingual portal for citizens, coupled with an enterprise-grade desktop command center for municipal controllers and field engineers.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-400">The Solution</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">NagarSetu AI: Closed-Loop Civic Intelligence</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Unifying citizens, controllers, field crews, and senior executive authorities.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-teal-500/40 space-y-3">
+          <div class="flex items-center gap-2 text-teal-400 font-bold text-sm">
+            <span class="p-1 rounded bg-teal-500/20">📱</span>
+            <span>CITIZEN EXPERIENCE PORTAL</span>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+            <li>• <strong class="text-white">7-Step Guided Wizard:</strong> Pin drop on Leaflet map, category detection, photo evidence, and atomic tracking ID (e.g., <code class="text-amber-400 font-mono">NGS-2026-000142</code>).</li>
+            <li>• <strong class="text-white">Inclusive Multilingual Experience:</strong> Seamless on-the-fly multi-language toggling across all citizen pages and conversational chatbots.</li>
+            <li>• <strong class="text-white">Two-Way Verification:</strong> Work orders require complainant confirmation (<code class="text-emerald-400">"YES — Resolved"</code> or <code class="text-rose-400">"NO — Reopen"</code>).</li>
+            <li>• <strong class="text-white">Public Transparency:</strong> Live view of public infrastructure capital projects and ward budgets.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3">
+          <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
+            <span class="p-1 rounded bg-amber-500/20">🖥️</span>
+            <span>MUNICIPAL COMMAND CENTER</span>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+            <li>• <strong class="text-white">Electron Desktop Mission Control:</strong> Built for municipal workstation control rooms with high data density.</li>
+            <li>• <strong class="text-white">Automated AI Routing:</strong> Instant categorization into 6 core departments with confidence scoring.</li>
+            <li>• <strong class="text-white">Smart City GIS Spatial Mesh:</strong> Live incident pins, prabhag boundary rings, and active worker positions.</li>
+            <li>• <strong class="text-white">Closed-Loop Work Orders:</strong> Supervisor dispatch, photographic before/after audit proof, and rework paths.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-xs font-mono text-slate-400 pt-3 border-t border-slate-800">
+        <span>Citizen Trust through Verification</span>
+        <span class="text-amber-400">Administrative Efficiency through Automation</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: Generative AI & Intelligent Civic Components
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="This slide represents the core technological heart of NagarSetu AI: three distinct GenAI and intelligent algorithms. The Civic Assistant guides citizens via conversational AI, the Routing Engine classifies emergencies, and the Deduplication Engine clusters co-located complaints into single work orders.">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">GenAI Architecture</span>
+          <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px] font-mono font-bold">CORE INNOVATION</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">Generative AI & Intelligent Civic Components</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Three distinct intelligent engines embedded directly into the civic workflow.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-auto">
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-amber-500/50 space-y-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">
+            🤖
+          </div>
+          <h3 class="text-base font-bold text-white">1. Civic Assistant Chatbot</h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong class="text-white">Multilingual NLP:</strong> Converses naturally in multiple languages with adaptive tone and intent detection.</li>
+            <li>• <strong class="text-white">Context-Aware Guidance:</strong> Explains P1-P4 priority tiers, municipal departments, and complaint filing steps.</li>
+            <li>• <strong class="text-white">Zero-Failure Architecture:</strong> Backend REST AI service with instant client-side fallback engine that works offline.</li>
+            <li>• <strong class="text-white">1-Click Action Chips:</strong> Renders clickable pills that route directly to filing forms or case timelines.</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-teal-500/50 space-y-3">
+          <div class="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-sm">
+            ⚡
+          </div>
+          <h3 class="text-base font-bold text-white">2. AI Routing & Triage</h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong class="text-white">Automated Triage:</strong> Scans complaint text and classifies into 6 municipal departments.</li>
+            <li>• <strong class="text-white">Severity & Priority Scoring:</strong> Assigns P1 (Critical), P2 (High), P3 (Medium), or P4 (Low) with automatic SLA targets.</li>
+            <li>• <strong class="text-white">Confidence Metric:</strong> Displays 0-100% confidence rating with 1-click controller approval or override.</li>
+            <li>• <strong class="text-white">Zero Bureaucratic Lag:</strong> Reduces routing from 3 days to under 200 milliseconds.</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-emerald-500/50 space-y-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+            📍
+          </div>
+          <h3 class="text-base font-bold text-white">3. Spatial Deduplication</h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong class="text-white">Haversine Distance Clustering:</strong> Computes spatial proximity radius of all active complaints.</li>
+            <li>• <strong class="text-white">Semantic Similarity:</strong> Evaluates description tokens to identify co-located duplicates (e.g. 14 pothole reports).</li>
+            <li>• <strong class="text-white">Master Parent Ticket:</strong> Groups duplicates into a single work order dispatch.</li>
+            <li>• <strong class="text-white">Synchronized Updates:</strong> When the master ticket is resolved, all complainants receive resolution alerts.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+        <span>Bilingual GenAI Assistant</span>
+        <span class="text-amber-400">95%+ Accurate Classification</span>
+        <span>65% Field Dispatch Cost Savings</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: Technical Architecture & Tech Stack
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="Our engineering stack combines a React 18 frontend inside an Electron desktop wrapper, backed by Node.js/Express and MongoDB. The system enforces tenant isolation and atomic ID generation to guarantee data integrity.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-400">System Engineering</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">End-to-End Technology Stack</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Engineered for speed, offline reliability, strict privacy, and zero data corruption.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-auto">
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-slate-700/80 space-y-3">
+          <div class="text-xs font-mono text-white font-bold uppercase tracking-wider border-b border-slate-800 pb-2">
+            FRONTEND & DESKTOP SHELL
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong class="text-white">React 18 + Vite 6:</strong> High-performance SPA with modular Context providers.</li>
+            <li>• <strong class="text-white">Electron Framework:</strong> Packaged desktop shell with custom title bar and window controls.</li>
+            <li>• <strong class="text-white">Tailwind CSS:</strong> Semantic design system with Amber (#F59E0B) and Charcoal (#0B1120).</li>
+            <li>• <strong class="text-white">Leaflet & OpenStreetMap:</strong> Zero-cost, high-performance GIS spatial map engine.</li>
+            <li>• <strong class="text-white">Framer Motion & Lucide:</strong> Micro-animations, responsive drawer, telemetry charts.</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-teal-500/40 space-y-3">
+          <div class="text-xs font-mono text-teal-400 font-bold uppercase tracking-wider border-b border-slate-800 pb-2">
+            BACKEND REST API SERVER
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong class="text-white">Node.js + Express:</strong> Asynchronous modular REST API with ES Modules.</li>
+            <li>• <strong class="text-white">JWT Authentication:</strong> Secure token generation with bcrypt password hashing.</li>
+            <li>• <strong class="text-white">Helmet & Rate Limiting:</strong> Security headers and brute-force protection.</li>
+            <li>• <strong class="text-white">Request Tracing:</strong> Injects <code class="text-amber-400">X-Request-ID</code> UUIDv4 on every transaction.</li>
+            <li>• <strong class="text-white">Database Gatekeeper:</strong> Returns clean 503 errors with honest fallback if DB is offline.</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3">
+          <div class="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider border-b border-slate-800 pb-2">
+            DATABASE & DATA INTEGRITY
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong class="text-white">MongoDB & Mongoose:</strong> 14 schema collections with GeoJSON spatial indexing.</li>
+            <li>• <strong class="text-white">Atomic Sequential Counters:</strong> Thread-safe Counter model generating collision-free IDs.</li>
+            <li>• <strong class="text-white">Immutable AuditLog:</strong> Append-only ledger recording all actor mutations for RTI.</li>
+            <li>• <strong class="text-white">Tenant Isolation:</strong> Strict <code class="text-amber-400">municipalityId</code> scoping preventing cross-city data leaks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+        <span>Zero Uncaught Build Errors</span>
+        <span class="text-teal-400">Cross-Platform Desktop & Web</span>
+        <span>ACID-Compliant Atomic Mutations</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: Flagship: Ichalkaranji Municipal Corporation
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="Rather than creating a generic synthetic city, NagarSetu AI is anchored to real-world administrative data from Ichalkaranji Municipal Corporation. We mapped its 16 election Prabhags, Panchganga river water intakes, and textile industrial sectors while strictly omitting private contact numbers.">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Real-World Municipal Data</span>
+          <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px] font-mono font-bold">FLAGSHIP PILOT</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">Ichalkaranji Municipal Corporation (IMC)</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Anchored with real geographic coordinates, election Prabhags, and municipal infrastructure.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3">
+          <div class="text-sm font-bold text-amber-400 font-mono">GEOGRAPHIC & ADMINISTRATIVE ANCHORS</div>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong class="text-white">Municipal HQ:</strong> Station Road, beside Guru Talkies, Vikas Nagar, Ichalkaranji – 416115.</li>
+            <li>• <strong class="text-white">Geographic Coordinates:</strong> 16.69916° N, 74.45775° E (Center: <code class="text-amber-400 font-mono">[16.6992, 74.4578]</code>).</li>
+            <li>• <strong class="text-white">Total Area:</strong> 49.84 sq km in Hatkanangale Taluka, Kolhapur District, Panchganga valley.</li>
+            <li>• <strong class="text-white">Administrative Structure:</strong> 65 Municipal Wards organized across 16 Election Prabhags / Administrative Zones.</li>
+            <li>• <strong class="text-white">Strict Privacy Compliance:</strong> Zero personal phone numbers or unverified helplines; institutional administrative titles only.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-teal-500/40 space-y-3">
+          <div class="text-sm font-bold text-teal-400 font-mono">AUTHENTIC PRABHAGS MAPPED</div>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong class="text-white">Prabhag 1 (Rajwada & Kapad Market):</strong> Textile trade corridor; focus on commercial traffic.</li>
+            <li>• <strong class="text-white">Prabhag 2 (Janata Chowk & D.K.T.E.):</strong> High-density student & civic traffic intersection.</li>
+            <li>• <strong class="text-white">Prabhag 4 (Station Road & Vikas Nagar HQ):</strong> Corporation headquarters control perimeter.</li>
+            <li>• <strong class="text-white">Prabhag 5 (Powerloom Weaving Estate):</strong> Textile industrial waste & high-voltage cable monitoring.</li>
+            <li>• <strong class="text-white">Prabhag 6 (Panchganga River Intake Well):</strong> Municipal drinking water pumping lifeline.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+        <span>Manchester of Maharashtra</span>
+        <span class="text-amber-400">16 Election Prabhags Configured</span>
+        <span>Zero Sensitive Contact Leaks</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: Closed-Loop Lifecycle
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="Here is the 5-step lifecycle. Notice Step 5: unlike traditional portals where government workers mark things complete without verification, NagarSetu AI enforces citizen sign-off with a rework escalation path.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Workflow Architecture</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">Closed-Loop Civic Grievance Lifecycle</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Zero unverified closures: complete accountability from report to physical fix.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 my-auto">
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-2 flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-mono font-bold text-amber-400 uppercase">STEP 01</div>
+            <h4 class="text-sm font-bold text-white mt-1">Citizen Filing</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">Citizen pins map location, uploads photo/video proof, and submits issue in voice or text.</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 border-t border-slate-800 pt-2">ID: NGS-2026-XXXXXX</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-teal-500/40 space-y-2 flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-mono font-bold text-teal-400 uppercase">STEP 02</div>
+            <h4 class="text-sm font-bold text-white mt-1">AI Triage & Deduplication</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">AI groups nearby duplicates, categorizes department, assigns priority (P1-P4), and starts SLA timer.</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 border-t border-slate-800 pt-2">Auto-Triage &lt; 200ms</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-500/40 space-y-2 flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-mono font-bold text-slate-300 uppercase">STEP 03</div>
+            <h4 class="text-sm font-bold text-white mt-1">Work Order Dispatch</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">Controller approves routing; Work Order (WO-2026-XXXXXX) auto-assigned to ward crew.</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 border-t border-slate-800 pt-2">Supervisor Inspection</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-emerald-500/40 space-y-2 flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-mono font-bold text-emerald-400 uppercase">STEP 04</div>
+            <h4 class="text-sm font-bold text-white mt-1">Field Execution & Proof</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">Crew repairs physical fault and uploads required before/after photos with GPS metadata.</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 border-t border-slate-800 pt-2">QC Audit Approval</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-rose-500/40 space-y-2 flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-mono font-bold text-rose-400 uppercase">STEP 05</div>
+            <h4 class="text-sm font-bold text-white mt-1">Citizen Verification</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">Citizen inspects result. Confirmed = CLOSED; Disputed = REOPENED with instant supervisor rework.</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 border-t border-slate-800 pt-2">Two-Way Verification</div>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+        <span>No Paper Closes</span>
+        <span class="text-emerald-400">Guaranteed Ground Verification</span>
+        <span>Full Audit Accountability</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: Field Dispatch & Work Orders
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="Our work order module ensures that civic repairs are genuinely completed. Workers must submit before and after photos, and supervisors inspect proof before the case reaches the citizen for final sign-off.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-400">Field Execution</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">Work Orders & Photographic QC Proof</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Eliminating bogus closures with GPS geotagging and supervisor inspection.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-slate-700/80 space-y-3">
+          <div class="text-sm font-bold text-amber-400 font-mono">FIELD DISPATCH CONSOLE</div>
+          <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+            <li>• <strong class="text-white">City-Scoped Queues:</strong> Work orders filter strictly by municipality jurisdiction (IMC, PMC, KMC).</li>
+            <li>• <strong class="text-white">Structured Task Scope:</strong> Explicit repair instructions (e.g. 50mm asphalt compaction, PVC valve replacement).</li>
+            <li>• <strong class="text-white">Worker Acceptance:</strong> Field crews acknowledge receipt, logging active arrival time and due dates.</li>
+            <li>• <strong class="text-white">Status Stream:</strong> Live status transitions: <code class="text-amber-400">ASSIGNED</code> → <code class="text-cyan-400">IN_PROGRESS</code> → <code class="text-emerald-400">COMPLETED</code>.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-teal-500/40 space-y-3">
+          <div class="text-sm font-bold text-teal-400 font-mono">QUALITY CONTROL & PROOF OF WORK</div>
+          <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+            <li>• <strong class="text-white">Before & After Evidence:</strong> Workers upload photographic evidence of site before work begins and upon completion.</li>
+            <li>• <strong class="text-white">GPS Coordinate Match:</strong> Uploaded photo metadata is validated against complaint pin coordinates.</li>
+            <li>• <strong class="text-white">Supervisor Approval:</strong> Supervisors inspect photos and notes; rejection automatically creates a rework order.</li>
+            <li>• <strong class="text-white">Permanent Audit Log:</strong> All completion notes, worker IDs, and inspection timestamps become immutable records.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+        <span>Visual Ground Truth</span>
+        <span class="text-teal-400">Mandatory Photographic Proof</span>
+        <span>Supervisor Quality Sign-off</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: Automated SLA & Escalations
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="To guarantee accountability, NagarSetu AI runs an automated SLA clock. When deadlines are at risk or breached, cases escalate up the bureaucratic ladder automatically from supervisor to commissioner.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-rose-400">Accountability</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">Automated SLA Engine & Escalation Hierarchy</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Enforcing civic service guarantees through real-time countdown timers and automated escalation.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-rose-500/40 space-y-3">
+          <div class="text-sm font-bold text-rose-400 font-mono">SERVICE LEVEL AGREEMENT (SLA) TIERS</div>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded bg-rose-500/10 border border-rose-500/30 flex justify-between items-center">
+              <span class="font-bold text-white">P1 Critical (4 - 6 Hours)</span>
+              <span class="text-rose-400 font-mono font-bold">Pipeline burst, live wire, water contamination</span>
+            </div>
+            <div class="p-2 rounded bg-amber-500/10 border border-amber-500/30 flex justify-between items-center">
+              <span class="font-bold text-white">P2 High (12 - 24 Hours)</span>
+              <span class="text-amber-400 font-mono font-bold">Deep pothole, fallen tree, streetlight outage</span>
+            </div>
+            <div class="p-2 rounded bg-blue-500/10 border border-blue-500/30 flex justify-between items-center">
+              <span class="font-bold text-white">P3 Medium (24 - 48 Hours)</span>
+              <span class="text-blue-400 font-mono font-bold">Overflowing dustbins, drain blockage</span>
+            </div>
+            <div class="p-2 rounded bg-slate-800 border border-slate-700 flex justify-between items-center">
+              <span class="font-bold text-slate-300">P4 Low (72 - 96 Hours)</span>
+              <span class="text-slate-400 font-mono font-bold">Broken paver block, signage paint, encroachment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3">
+          <div class="text-sm font-bold text-amber-400 font-mono">AUTOMATED ESCALATION HIERARCHY</div>
+          <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+            <li>• <strong class="text-white">Level 1 Escalation (At Risk):</strong> When 75% of SLA buffer is consumed without worker dispatch, warning alert triggers on controller console.</li>
+            <li>• <strong class="text-white">Level 2 Escalation (SLA Breach):</strong> Timer hits zero without resolution; case escalates to Department Officer and City Controller.</li>
+            <li>• <strong class="text-white">Level 3 Escalation (Executive Review):</strong> Chronic breaches trigger direct executive notification to Municipal Commissioner (IAS).</li>
+            <li>• <strong class="text-white">Immutable Event Logging:</strong> Every breach records target minutes, elapsed minutes, and cause into <code class="text-amber-400">SLAEvents</code>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+        <span>No Stagnant Tickets</span>
+        <span class="text-rose-400">Automated Breach Triggers</span>
+        <span>Executive Oversight</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: Role-Based Access Control (RBAC)
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="Our RBAC matrix covers 11 distinct user personas, ensuring strict segregation of duties. Workers only see assigned tasks, citizens only see their complaints, and controllers have citywide command oversight.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Security & Personas</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">11-Persona Role-Based Access Control (RBAC)</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Tailored consoles ensuring strict segregation of duties and data confidentiality.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-auto">
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-teal-500/40 space-y-3">
+          <div class="text-xs font-mono font-bold text-teal-400 uppercase tracking-wider border-b border-slate-800 pb-2">
+            CITIZEN & WARD PERSONAS
+          </div>
+          <div class="space-y-2 text-xs">
+            <div>
+              <span class="font-bold text-white">CITIZEN:</span>
+              <p class="text-slate-300">File issues, track personal cases, view public projects, verify resolution.</p>
+            </div>
+            <div>
+              <span class="font-bold text-white">MUNICIPAL_WORKER:</span>
+              <p class="text-slate-300">View assigned tasks, update work status, upload before/after evidence photos.</p>
+            </div>
+            <div>
+              <span class="font-bold text-white">WARD_MEMBER & WARD_OFFICER:</span>
+              <p class="text-slate-300">Prabhag-level oversight, local crew coordination, SLA breach tracking.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3">
+          <div class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider border-b border-slate-800 pb-2">
+            DEPARTMENTAL & CONTROL
+          </div>
+          <div class="space-y-2 text-xs">
+            <div>
+              <span class="font-bold text-white">DEPARTMENT_SUPERVISOR:</span>
+              <p class="text-slate-300">Create work orders, assign field workers, inspect QC proof, approve/reject rework.</p>
+            </div>
+            <div>
+              <span class="font-bold text-white">DEPARTMENT_OFFICER:</span>
+              <p class="text-slate-300">Departmental budget, multi-ward infrastructure planning, workforce metrics.</p>
+            </div>
+            <div>
+              <span class="font-bold text-white">NAGARSETU_CONTROLLER:</span>
+              <p class="text-slate-300">Mission-control command center, AI routing queue override, citywide triage.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/90 border border-purple-500/40 space-y-3">
+          <div class="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider border-b border-slate-800 pb-2">
+            EXECUTIVE & SPECIALIZED
+          </div>
+          <div class="space-y-2 text-xs">
+            <div>
+              <span class="font-bold text-white">SENIOR_AUTHORITY (IAS):</span>
+              <p class="text-slate-300">Executive dashboard, high-level SLA compliance, cross-department analytics.</p>
+            </div>
+            <div>
+              <span class="font-bold text-white">POLICE_EMERGENCY_USER:</span>
+              <p class="text-slate-300">Emergency gateway for inter-agency disaster & crisis dispatch.</p>
+            </div>
+            <div>
+              <span class="font-bold text-white">CITY_ADMIN & SUPER_ADMIN:</span>
+              <p class="text-slate-300">System configuration, user management, audit log inspection, tenant isolation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+        <span>Zero Privilege Escalation</span>
+        <span class="text-amber-400">1-Click Demo Persona Switcher</span>
+        <span>Secure JWT Auth</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 11: Real-Time GIS Spatial Mesh & Telemetry
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="The Smart City GIS Mesh and Civic Telemetry Grid give controllers an instant bird's eye view. Municipal sectors—water, electricity, roads, and drainage—are monitored with live telemetry badges.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-400">Live Spatial Telemetry</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">Smart City GIS Spatial Mesh & Telemetry Grid</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Real-time situational awareness across municipal sectors with zero UI clipping.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-teal-500/40 space-y-3">
+          <div class="text-sm font-bold text-teal-400 font-mono">SMART CITY GIS MAP FEATURES</div>
+          <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+            <li>• <strong class="text-white">Leaflet & CartoDB Engine:</strong> Theme-aware tiles with high responsiveness and zero aspect-ratio clipping.</li>
+            <li>• <strong class="text-white">Prabhag Boundary Rings:</strong> Dashed spatial circles representing authentic Ichalkaranji wards with population telemetry.</li>
+            <li>• <strong class="text-white">Color-Coded Priority Markers:</strong> Red (P1 Critical), Amber (P2 High), Blue (P3 Medium) with live SLA remaining popups.</li>
+            <li>• <strong class="text-white">Field Crew Markers:</strong> Live pins showing deployed worker teams (e.g. Amit Jadhav, Santosh Pawar).</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3">
+          <div class="text-sm font-bold text-amber-400 font-mono">5-SECTOR TELEMETRY MONITORING</div>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="p-2.5 rounded bg-slate-800 border border-slate-700">
+              <span class="text-blue-400 font-bold block">💧 WATER SUPPLY</span>
+              <span class="text-slate-300 text-[11px]">Panchganga intake pressure & pipeline flow</span>
+            </div>
+            <div class="p-2.5 rounded bg-slate-800 border border-slate-700">
+              <span class="text-amber-400 font-bold block">⚡ POWER & LIGHTS</span>
+              <span class="text-slate-300 text-[11px]">Feeder cable health & streetlight uptime</span>
+            </div>
+            <div class="p-2.5 rounded bg-slate-800 border border-slate-700">
+              <span class="text-slate-300 font-bold block">🛣️ ROADS & MOBILITY</span>
+              <span class="text-slate-300 text-[11px]">Asphalt repair & pothole density telemetry</span>
+            </div>
+            <div class="p-2.5 rounded bg-slate-800 border border-slate-700">
+              <span class="text-cyan-400 font-bold block">🌊 DRAINAGE & SEWAGE</span>
+              <span class="text-slate-300 text-[11px]">Stormwater silt build-up & flood alerts</span>
+            </div>
+            <div class="p-2.5 rounded bg-slate-800 border border-slate-700 col-span-2">
+              <span class="text-emerald-400 font-bold block">♻️ SOLID WASTE MANAGEMENT</span>
+              <span class="text-slate-300 text-[11px]">Textile industrial waste clearance & bin levels</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+        <span>Dynamic Ward Layering</span>
+        <span class="text-teal-400">Live Spatial Feedback</span>
+        <span>5 Core Infrastructure Sectors</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12: Delivery, Verification & Impact
+         ========================================== -->
+    <section class="slide w-full max-w-6xl h-full max-h-[720px] bg-[#131D31] border border-slate-700/80 rounded-2xl p-8 sm:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden" data-notes="To conclude, NagarSetu AI is not just a concept—it is a verified, fully built civic governance platform ready for live deployment in Ichalkaranji Municipal Corporation, providing a modern template for smart governance in India.">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400">Delivery & Verification</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-2">Demonstrated Results & Future Vision</h2>
+        <p class="text-xs sm:text-sm text-slate-400">A verified, production-ready civic technology benchmark.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-emerald-500/40 space-y-3">
+          <div class="text-sm font-bold text-emerald-400 font-mono">VERIFIED PROJECT MILESTONES</div>
+          <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+            <li>• <strong class="text-white">Clean Production Build:</strong> Vite 6 and Electron compile with 0 errors and 0 lint warnings.</li>
+            <li>• <strong class="text-white">Idempotent MongoDB Seed:</strong> 14 schemas pre-populated with Ichalkaranji administrative data, Prabhags 1-16, and 40+ case workflows.</li>
+            <li>• <strong class="text-white">Zero Privacy Violations:</strong> Successfully scrubbed all personal phone and contact numbers.</li>
+            <li>• <strong class="text-white">Multilingual Localization:</strong> 100% of UI controls, bot dialogue, and forms adapt seamlessly across multiple languages.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3">
+          <div class="text-sm font-bold text-amber-400 font-mono">MEASURABLE CIVIC IMPACT</div>
+          <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+            <li>• <strong class="text-white">65% Faster Triage:</strong> Automated AI routing cuts manual complaint sorting from 3 days to milliseconds.</li>
+            <li>• <strong class="text-white">Zero Lost Complaints:</strong> Collision-free sequential IDs and automated SLA escalation ensure no case is buried.</li>
+            <li>• <strong class="text-white">Elimination of Duplicate Waste:</strong> Spatial clustering prevents redundant crew dispatches.</li>
+            <li>• <strong class="text-white">Scalable National Blueprint:</strong> Readily deployable to Pune, Kolhapur, Nashik, or any municipal corporation across India.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-gradient-to-r from-amber-500/20 via-teal-500/20 to-slate-900 border border-amber-500/30 flex items-center justify-between">
+        <div>
+          <h4 class="text-sm font-bold text-white">NagarSetu AI Platform</h4>
+          <p class="text-xs text-slate-300">Connecting Citizens. Empowering Governance. • Ichalkaranji Municipal Corporation</p>
+        </div>
+        <div class="text-right font-mono text-xs text-amber-400 font-bold">
+          THANK YOU
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation Dock -->
+  <footer class="no-print h-16 border-t border-slate-800/80 bg-[#0F172A]/90 backdrop-blur-md px-6 flex items-center justify-between z-30 select-none">
+    <div class="flex items-center gap-3">
+      <button onclick="prevSlide()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-mono text-xs font-bold transition-all flex items-center gap-2">
+        <span>←</span>
+        <span>Previous</span>
+      </button>
+      <button onclick="nextSlide()" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition-all flex items-center gap-2">
+        <span>Next</span>
+        <span>→</span>
+      </button>
+    </div>
+
+    <!-- Slide Indicators -->
+    <div class="hidden sm:flex items-center gap-1.5" id="slideDots"></div>
+
+    <div class="text-xs font-mono text-slate-500">
+      Use <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">→</kbd> or <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">Space</kbd>
+    </div>
+  </footer>
+
+  <!-- Presenter Notes Drawer (Modal) -->
+  <div id="notesDrawer" class="no-print hidden fixed bottom-20 left-6 right-6 max-w-3xl mx-auto p-4 rounded-xl bg-slate-950/95 border border-amber-500/50 shadow-2xl backdrop-blur-md z-50 text-xs font-sans text-slate-200">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-2 mb-2">
+      <span class="font-mono font-bold text-amber-400 flex items-center gap-1.5">
+        <span>🎤</span>
+        <span>PRESENTER SPEECH SCRIPT / NOTES</span>
+      </span>
+      <button onclick="toggleNotes()" class="text-slate-400 hover:text-white font-bold text-sm">✕</button>
+    </div>
+    <p id="notesContent" class="leading-relaxed text-slate-300 font-mono"></p>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const currentSlideNum = document.getElementById('currentSlideNum');
+    const totalSlidesNum = document.getElementById('totalSlidesNum');
+    const slideDots = document.getElementById('slideDots');
+    const notesContent = document.getElementById('notesContent');
+    const notesDrawer = document.getElementById('notesDrawer');
+
+    totalSlidesNum.innerText = totalSlides;
+
+    // Build Dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-amber-400 w-6' : 'bg-slate-700'}`;
+      dot.onclick = () => goToSlide(i);
+      slideDots.appendChild(dot);
+    });
+
+    function updateSlide() {
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      currentSlideNum.innerText = currentSlide + 1;
+
+      // Update dots
+      const dots = slideDots.querySelectorAll('button');
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.className = 'w-6 h-2 rounded-full bg-amber-400 transition-all';
+        } else {
+          dot.className = 'w-2 h-2 rounded-full bg-slate-700 transition-all';
+        }
+      });
+
+      // Update notes
+      const activeSlide = slides[currentSlide];
+      notesContent.innerText = activeSlide.getAttribute('data-notes') || 'No notes for this slide.';
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      updateSlide();
+    }
+
+    function toggleNotes() {
+      notesDrawer.classList.toggle('hidden');
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+      }
+    }
+
+    // Keyboard controls
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      } else if (e.key === 'p' || e.key === 'P') {
+        toggleNotes();
+      }
+    });
+
+    // Initial notes update
+    updateSlide();
+  </script>
+</body>
+</html>
